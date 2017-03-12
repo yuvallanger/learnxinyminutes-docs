@@ -198,6 +198,22 @@ True ; => True
   (defn get-spell [self]
     self.spell))
 
+;;; Comprehensions
+;; List comprehensions are expressed in the following way
+;; As shown in https://nbviewer.jupyter.org/github/Calysto/calysto_hy/blob/master/notebooks/Tutorial.ipynb
+(setv odds-squared
+      (list-comp (pow num 2)
+                 (num (range 100))
+                 (-> num (% 2) (= 1))))
+
+;; Nesting iterators
+;; As shown in https://nbviewer.jupyter.org/github/Calysto/calysto_hy/blob/master/notebooks/Tutorial.ipynb
+(setv blocks-of-a-chessboard
+ (list-comp
+  (, x y)
+  (x (range 8)
+   y "ABCDEFGH")))
+
 ;; do checkout hylang.org
 ```
 
